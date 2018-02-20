@@ -6,18 +6,13 @@ Created on 6 feb. 2018
 
 from random import randrange
 
-fichero = input("Nombre del fichero: ")
-fich = open(fichero+".txt", "w")
+c    = [] # Caracteristicas
+rmin = [] # Rango mínimo
+rmax = [] # Ranto máximo    
+l    = [] # Lista de elementos
 
-# Creación de listas
-c       = [] # Caracteristicas
-rmin    = [] # Rango mínimo
-rmax    = [] # Ranto máximo    
-
-
-l = []
-for i in range(5) :
-    l.append([])
+n = input("Nombre del fichero (sin extensión): ")
+f = open(n + ".txt", "w")
 
 # Almacenamiento de características y rangos por parte del usuario
 for x in range(5):
@@ -27,12 +22,13 @@ for x in range(5):
     
     # Bucle para rellenar las diferentes listas siguiendo el rango establecido por el usuario
     for i in range(1000):
-        l[x].append(randrange(rmin[x],rmax[x]))
+        l.append([])
+        l[x].append(randrange(rmin[x],rmax[x])) # Anidación las listas de elementos según la característica
 
 # Declaración de variable de tipo cadena salida para la extracción de los datos
 salida = c[0] + ":" + str(l[0]).replace("[", "").replace("]", "").replace(" ", "") + "\n" + c[1] + ":" + str(l[1]).replace("[", "").replace("]", "").replace(" ", "") + "\n" + c[2] + ":" + str(l[2]).replace("[", "").replace("]", "").replace(" ", "") + "\n" + c[3] + ":" + str(l[3]).replace("[", "").replace("]", "").replace(" ", "") + "\n" + c[4] + ":" + str(l[4]).replace("[", "").replace("]", "").replace(" ", "")
 
-print(salida) # Impresión por pantalla la salida
-fich.write(salida) # Escritura la salida en el fichero establecido
+print(salida)   # Impresión por pantalla la salida
+f.write(salida) # Escritura la salida en el fichero establecido
 
-fich.close()
+f.close()

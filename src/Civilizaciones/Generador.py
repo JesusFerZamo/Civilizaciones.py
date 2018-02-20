@@ -40,13 +40,14 @@ for x in range(1000):
     lista4.append(randrange(r4a,r4b))
     lista5.append(randrange(r5a,r5b))
     
+    '''
 d = {
     c1:lista1, c2:lista2, c3:lista3, c4:lista4, c5:lista5
     }
 
 for x, y in d.items():
     print(x, y)
-    
+    '''
 salida = c1 + ":" + str(lista1).replace("[", "").replace("]", "").replace(" ", "") + "\n" + c2 + ":" + str(lista2).replace("[", "").replace("]", "").replace(" ", "") + "\n" + c3 + ":" + str(lista3).replace("[", "").replace("]", "").replace(" ", "") + "\n" + c4 + ":" + str(lista4).replace("[", "").replace("]", "").replace(" ", "") + "\n" + c5 + ":" + str(lista5).replace("[", "").replace("]", "").replace(" ", "")
 
 print(salida)

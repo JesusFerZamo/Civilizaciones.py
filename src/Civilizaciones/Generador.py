@@ -7,6 +7,8 @@ from random import randrange
 fichero = input("Nombre del fichero: ")
 fich = open(fichero+".txt", "w")
 
+caracteristicas=()
+
 print("Introduzca las 5 características con sus rangos por favor")
 c1 = input("Característica 1: ")
 r1a = int(input("Principio del rango " + c1 + ": "))
@@ -45,5 +47,9 @@ d = {
 for x, y in d.items():
     print(x, y)
     
-fich.write(str(d))
+salida = c1 + ":" + str(lista1).replace("[", "").replace("]", "").replace(" ", "") + "\n" + c2 + ":" + str(lista2).replace("[", "").replace("]", "").replace(" ", "") + "\n" + c3 + ":" + str(lista3).replace("[", "").replace("]", "").replace(" ", "") + "\n" + c4 + ":" + str(lista4).replace("[", "").replace("]", "").replace(" ", "") + "\n" + c5 + ":" + str(lista5).replace("[", "").replace("]", "").replace(" ", "")
+
+print(salida)
+
+fich.write(salida)
 fich.close()

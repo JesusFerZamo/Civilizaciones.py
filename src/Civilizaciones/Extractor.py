@@ -5,8 +5,12 @@ Created on 19 feb. 2018
 @author: javier
 '''
 
-G=globals()
-for i in range(10):
-  G["grupo%d"%i]=0
+#n = input("Nombre del fichero (sin extensión): ")
+n = "ImperioRomano"
+f = open(n + ".txt", "r")
 
-print( G[2])
+entrada = f.read()
+
+print(entrada)
+
+f.close

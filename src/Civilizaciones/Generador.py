@@ -30,5 +30,4 @@ salida = c[0] + ":" + str(l[0]).replace("[", "").replace("]", "").replace(" ", "
 
 print(salida)   # Impresión por pantalla la salida
 f.write(salida) # Escritura la salida en el fichero establecido
-
 f.close()

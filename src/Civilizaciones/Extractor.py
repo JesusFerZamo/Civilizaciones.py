@@ -9,8 +9,28 @@ Created on 19 feb. 2018
 n = "ImperioRomano"
 f = open(n + ".txt", "r")
 
+l = [] # Lista primigenia
+n = [] # Lista de nombres de variables
+m = [] # Lista de elementos de cada variable
+
+n0 = []
+n1 = []
+n2 = []
+n3 = []
+n4 = []
+
 entrada = f.read()
 
-print(entrada)
+l = entrada.split("\n")
+
+for i in range(len(l)):
+    n.append(l[i].split(":")[0]) # Almacena los nombres de variables
+    m.append(l[i].split(":")[1])
+    for x in range(1000) :
+        m.append([])
+        m[i].append(m.split(",")[x])
+             
+
+print(m)
 
 f.close

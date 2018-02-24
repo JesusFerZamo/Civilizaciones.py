@@ -10,7 +10,6 @@ n = "ImperioRomano"
 f = open(n + ".txt", "r")
 
 l = [] # Lista primigenia
-n = [] # Lista de nombres de variables
 m = [] # Lista de elementos de cada variable
 matrix = [] # Matriz de elementos numéricos
 
@@ -20,11 +19,10 @@ l = entrada.split("\n")
 
 for i in range(len(l)):
     n.append(l[i].split(":")[0]) # Almacena los nombres de variables
-    m.append(l[i].split(":")[1]) # Almacena listas de elementos
     matrix.append([])
-    matrix[i] = m[i].split(",")  # Almacena elementos de la lista de elementos en matrix
+    matrix[i] = l[i].split(":")[1].split(",")  # Almacena elementos de la lista de elementos en matrix
  
 print(entrada)
-print(matrix[2][0])
+print(matrix[1][1])
 
 f.close

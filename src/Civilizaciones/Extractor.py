@@ -1,6 +1,7 @@
 # coding: utf-8
 '''
 Created on 19 feb. 2018
+Objetivo: media, moda, máximo, mínimo y varianza
 
 @author: javier
 '''
@@ -10,7 +11,7 @@ n = "ImperioRomano"
 f = open(n + ".txt", "r")
 
 l = [] # Lista primigenia
-m = [] # Lista de elementos de cada variable
+n = [] # Lista de nombres de caracteristicas
 matrix = [] # Matriz de elementos numéricos
 
 entrada = f.read()
@@ -20,9 +21,10 @@ l = entrada.split("\n")
 for i in range(len(l)):
     n.append(l[i].split(":")[0]) # Almacena los nombres de variables
     matrix.append([])
-    matrix[i] = l[i].split(":")[1].split(",")  # Almacena elementos de la lista de elementos en matrix
- 
+    matrix[i] = l[i].split(":")[1].split(",")  # Almacena elementos en matrix
+
 print(entrada)
-print(matrix[1][1])
+print(l[1].split(":")[1].split(","))
 
 f.close
+

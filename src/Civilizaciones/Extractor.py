@@ -40,19 +40,11 @@ def moda(l):
  
     return moda
 
-# Cálculo del mínimo
-def minimo(l):
-    ll=sort(l)
-    minimo = ll[len(ll)-1]
+# Cálculo del mínimo y del máximo
+def minmax(l):
+    ll = sort(l)
     
-    return minimo
-
-# Cálculo del máximo
-def maximo(l):
-    ll=sort(l)
-    maximo = ll[0]
-    
-    return maximo
+    return ll[len(ll)-1],ll[0]
 
 # Cálculo de la varianza
 def varianza(l):
@@ -69,13 +61,14 @@ def varianza(l):
 '''
 CÓDIGO
 '''
+# Declaración y apertura del fichero sobre el que trabajar
 n = input("Nombre del fichero (sin extensión): ")
 f = open(n + ".txt", "r")
+entrada = f.read()
 
+# Declaración de variables
 n = [] # Lista de nombres de caracteristicas
 matrix = [] # Matriz de elementos numéricos
-
-entrada = f.read()
 l = entrada.split("\n")
 
 for i in range(len(l)):
@@ -83,11 +76,13 @@ for i in range(len(l)):
     matrix.append([])
     matrix[i] = l[i].split(":")[1].split(",")  # Almacena elementos en matrix
     
+    max,min = minmax(matrix[i])
+    
     print(n[i].upper() + "\n")
     print("Media: " + str(media(matrix[i])))
     print("Moda: " + str(moda(matrix[i])))
-    print("Mínimo: " + str(minimo(matrix[i])))
-    print("Máximo: " + str(maximo(matrix[i])))
+    print("Mínimo: " + str(min))
+    print("Máximo: " + str(max))
     print("Varianza: " + str(varianza(matrix[i])))
     print("------------------------------------------------------")
     

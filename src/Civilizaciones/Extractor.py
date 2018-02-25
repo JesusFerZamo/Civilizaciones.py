@@ -5,10 +5,12 @@ Objetivo: media, moda, máximo, mínimo y varianza
 
 @author: javier
 '''
+from whoosh.externalsort import sort
 
 '''
 FUNCIONES
 '''
+# Cálculo de la media
 def media(l):
     suma = 0
     total = len(l)
@@ -18,6 +20,20 @@ def media(l):
     resultado = suma / total
     return resultado
 
+def moda(l):
+    M = 0
+    cont = 0
+    ll=sort(l)
+    for i in range(0,len(l)-1):
+        if (ll[i] == ll[i+1]):
+            cont = cont + 1
+            if cont >= M:
+                M = cont
+                moda = ll[i]
+        else:
+            cont=0
+ 
+    return moda
 
 '''
 CÓDIGO
@@ -42,5 +58,7 @@ for i in range(len(l)):
 print(entrada)
 print(l[1].split(":")[1].split(","))
 print(media(l[1].split(":")[1].split(",")))
+print(moda(l[1].split(":")[1].split(",")))
+
 f.close
 

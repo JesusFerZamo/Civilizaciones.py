@@ -18,13 +18,16 @@ def media(l):
     for i in range(total):
         suma += int(l[i])
     resultado = suma / total
+    
     return resultado
 
 # Cálculo de la moda
 def moda(l):
+    
     M = 0
     cont = 0
     ll=sort(l)
+    moda = "error" # Si no se repite ningún número ni una sola vez, no habrá moda
     
     for i in range(0,len(l)-1):
         if (ll[i] == ll[i+1]):
@@ -86,7 +89,7 @@ for i in range(len(l)):
     matrix[i] = l[i].split(":")[1].split(",")  # Almacena elementos en matrix
     
     print("Media de " + n[i] + ": " + str(media(matrix[i])))
-    #print("Moda de " + n[i] + ": " + str(moda(matrix[i])))
+    print("Moda de " + n[i] + ": " + str(moda(matrix[i])))
     print("Mínimo de " + n[i] + ": " + str(minimo(matrix[i])))
     print("Máximo de " + n[i] + ": " + str(maximo(matrix[i])))
     print("Varianza de " + n[i] + ": " + str(varianza(matrix[i])))

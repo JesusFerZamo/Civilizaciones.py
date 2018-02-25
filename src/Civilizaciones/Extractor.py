@@ -6,6 +6,8 @@ Objetivo: media, moda, máximo, mínimo y varianza
 @author: javier
 '''
 from whoosh.externalsort import sort
+from whoosh.support.unicode import uppercase
+from whoosh.lang.porter2 import capitalize_consonant_ys
 
 '''
 FUNCIONES
@@ -70,29 +72,26 @@ def varianza(l):
 '''
 CÓDIGO
 '''
-#n = input("Nombre del fichero (sin extensión): ")
-n = "ImperioRomano"
+n = input("Nombre del fichero (sin extensión): ")
 f = open(n + ".txt", "r")
 
 n = [] # Lista de nombres de caracteristicas
 matrix = [] # Matriz de elementos numéricos
 
 entrada = f.read()
-
 l = entrada.split("\n")
-
-
 
 for i in range(len(l)):
     n.append(l[i].split(":")[0]) # Almacena los nombres de variables
     matrix.append([])
     matrix[i] = l[i].split(":")[1].split(",")  # Almacena elementos en matrix
     
-    print("Media de " + n[i] + ": " + str(media(matrix[i])))
-    print("Moda de " + n[i] + ": " + str(moda(matrix[i])))
-    print("Mínimo de " + n[i] + ": " + str(minimo(matrix[i])))
-    print("Máximo de " + n[i] + ": " + str(maximo(matrix[i])))
-    print("Varianza de " + n[i] + ": " + str(varianza(matrix[i])))
+    print(n[i].upper() + "\n")
+    print("Media: " + str(media(matrix[i])))
+    print("Moda: " + str(moda(matrix[i])))
+    print("Mínimo: " + str(minimo(matrix[i])))
+    print("Máximo: " + str(maximo(matrix[i])))
+    print("Varianza: " + str(varianza(matrix[i])))
     print("------------------------------------------------------")
     
 f.close

@@ -5,9 +5,8 @@ Objetivo: media, moda, máximo, mínimo y varianza
 
 @author: javier
 '''
-from whoosh.externalsort import sort
-from whoosh.support.unicode import uppercase
-from whoosh.lang.porter2 import capitalize_consonant_ys
+
+from whoosh.externalsort import sort # Ordenación de listas numéricas
 
 '''
 FUNCIONES
@@ -25,7 +24,6 @@ def media(l):
 
 # Cálculo de la moda
 def moda(l):
-    
     M = 0
     cont = 0
     ll=sort(l)
@@ -40,7 +38,6 @@ def moda(l):
         else:
             cont=0
  
-    
     return moda
 
 # Cálculo del mínimo

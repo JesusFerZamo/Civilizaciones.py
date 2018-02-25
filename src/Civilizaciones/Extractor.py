@@ -6,7 +6,6 @@ Objetivo: media, moda, máximo, mínimo y varianza
 @author: javier
 '''
 from whoosh.externalsort import sort
-from _operator import length_hint
 
 '''
 FUNCIONES
@@ -26,6 +25,7 @@ def moda(l):
     M = 0
     cont = 0
     ll=sort(l)
+    
     for i in range(0,len(l)-1):
         if (ll[i] == ll[i+1]):
             cont = cont + 1
@@ -35,6 +35,7 @@ def moda(l):
         else:
             cont=0
  
+    
     return moda
 
 # Cálculo del mínimo

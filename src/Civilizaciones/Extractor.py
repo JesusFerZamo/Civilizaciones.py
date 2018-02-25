@@ -48,7 +48,6 @@ def minimo(l):
 # Cálculo del máximo
 def maximo(l):
     ll=sort(l)
-    print(ll)
     maximo = ll[0]
     
     return maximo
@@ -79,17 +78,18 @@ entrada = f.read()
 
 l = entrada.split("\n")
 
+
+
 for i in range(len(l)):
     n.append(l[i].split(":")[0]) # Almacena los nombres de variables
     matrix.append([])
     matrix[i] = l[i].split(":")[1].split(",")  # Almacena elementos en matrix
     
     print("Media de " + n[i] + ": " + str(media(matrix[i])))
-    print("Moda de " + n[i] + ": " + str(moda(matrix[i])))
+    #print("Moda de " + n[i] + ": " + str(moda(matrix[i])))
     print("Mínimo de " + n[i] + ": " + str(minimo(matrix[i])))
     print("Máximo de " + n[i] + ": " + str(maximo(matrix[i])))
     print("Varianza de " + n[i] + ": " + str(varianza(matrix[i])))
     print("------------------------------------------------------")
     
-
 f.close

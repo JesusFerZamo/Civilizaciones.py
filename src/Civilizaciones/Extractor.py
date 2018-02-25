@@ -35,6 +35,18 @@ def moda(l):
  
     return moda
 
+def minimo(l):
+    ll=sort(l)
+    minimo = ll[len(ll)-1]
+    
+    return minimo
+
+def maximo(l):
+    ll=sort(l)
+    print(ll)
+    maximo = ll[0]
+    
+    return maximo
 '''
 CÓDIGO
 '''
@@ -55,10 +67,10 @@ for i in range(len(l)):
     matrix.append([])
     matrix[i] = l[i].split(":")[1].split(",")  # Almacena elementos en matrix
 
+lista = l[0].split(":")[1].split(",")
 print(entrada)
-print(l[1].split(":")[1].split(","))
-print(media(l[1].split(":")[1].split(",")))
-print(moda(l[1].split(":")[1].split(",")))
+print(maximo(lista))
+print(minimo(lista))
 
 f.close
 

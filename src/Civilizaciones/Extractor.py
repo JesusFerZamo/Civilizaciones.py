@@ -72,7 +72,6 @@ CÓDIGO
 n = "ImperioRomano"
 f = open(n + ".txt", "r")
 
-l = [] # Lista primigenia
 n = [] # Lista de nombres de caracteristicas
 matrix = [] # Matriz de elementos numéricos
 
@@ -84,11 +83,6 @@ for i in range(len(l)):
     n.append(l[i].split(":")[0]) # Almacena los nombres de variables
     matrix.append([])
     matrix[i] = l[i].split(":")[1].split(",")  # Almacena elementos en matrix
-
-lista = l[0].split(":")[1].split(",")
-
-
-print("Varianza : " + str(varianza(lista)))
+    
 
 f.close
-

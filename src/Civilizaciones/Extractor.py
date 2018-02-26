@@ -44,14 +44,24 @@ def moda(l):
 # Cálculo del mínimo y del máximo
 def minimo(l):
     ll=sort(l)
-    minimo = ll[len(ll)-1]
+    nl = []
+    
+    for i in range(len(l)) :
+        nl.append(int(ll[i]))
+    
+    minimo = min(nl)
     
     return minimo
 
 def maximo(l):
     ll=sort(l)
-    maximo = ll[0]
+    nl = []
     
+    for i in range(len(l)) :
+        nl.append(int(ll[i]))
+    
+    maximo = max(nl)
+        
     return maximo
 
 # Cálculo de la varianza

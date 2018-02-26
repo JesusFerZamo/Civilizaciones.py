@@ -7,6 +7,7 @@ Objetivo: media, moda, máximo, mínimo y varianza
 '''
 
 from whoosh.externalsort import sort # Ordenación de listas numéricas
+from builtins import int
 
 '''
 FUNCIONES
@@ -41,10 +42,17 @@ def moda(l):
     return moda
 
 # Cálculo del mínimo y del máximo
-def minmax(l):
-    ll = sort(l)
+def minimo(l):
+    ll=sort(l)
+    minimo = ll[len(ll)-1]
     
-    return ll[len(ll)-1],ll[0]
+    return minimo
+
+def maximo(l):
+    ll=sort(l)
+    maximo = ll[0]
+    
+    return maximo
 
 # Cálculo de la varianza
 def varianza(l):
@@ -75,14 +83,12 @@ for i in range(len(l)):
     n.append(l[i].split(":")[0]) # Almacena los nombres de variables
     matrix.append([])
     matrix[i] = l[i].split(":")[1].split(",")  # Almacena elementos en matrix
-    
-    max,min = minmax(matrix[i])
-    
+        
     print(n[i].upper() + "\n")
     print("Media: " + str(media(matrix[i])))
     print("Moda: " + str(moda(matrix[i])))
-    print("Mínimo: " + str(min))
-    print("Máximo: " + str(max))
+    print("Mínimo: " + str(minimo(matrix[i])))
+    print("Máximo: " + str(maximo(matrix[i])))
     print("Varianza: " + str(varianza(matrix[i])))
     print("------------------------------------------------------")
     

@@ -6,9 +6,6 @@ Objetivo: media, moda, máximo, mínimo y varianza
 @author: javier
 '''
 
-from whoosh.externalsort import sort # Ordenación de listas numéricas
-from builtins import int
-
 '''
 FUNCIONES
 '''
@@ -27,7 +24,7 @@ def media(l):
 def moda(l):
     M = 0
     cont = 0
-    ll=sort(l)
+    ll=sorted(l)
     moda = "error" # Si no se repite ningún número ni una sola vez, no habrá moda
     
     for i in range(0,len(l)-1):
@@ -43,7 +40,7 @@ def moda(l):
 
 # Cálculo del mínimo y del máximo
 def minimo(l):
-    ll=sort(l)
+    ll=sorted(l)
     nl = []
     
     for i in range(len(l)) :
@@ -54,7 +51,7 @@ def minimo(l):
     return minimo
 
 def maximo(l):
-    ll=sort(l)
+    ll=sorted(l)
     nl = []
     
     for i in range(len(l)) :
